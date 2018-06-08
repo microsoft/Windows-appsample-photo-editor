@@ -23,7 +23,9 @@ Photo Editor primarily demonstrates:
 
 ## Prerequisites
 
-This sample requires [Visual Studio 2017 and the latest version of the Windows 10 SDK (10.0.17134.0)](http://go.microsoft.com/fwlink/?LinkID=280676) and the latest [C++/WinRT Visual Studio Extension](https://aka.ms/cppwinrt/vsix). You can use the free Visual Studio Community Edition to build and run Windows Universal Platform (UWP) apps. 
+This sample requires:
+- [Visual Studio 2017 and the latest version of the Windows 10 SDK (10.0.17134.0)](http://go.microsoft.com/fwlink/?LinkID=280676). You can use the free Visual Studio Community Edition to build and run Windows Universal Platform (UWP) apps. 
+- Download and install the [C++/WinRT Visual Studio Extension](https://aka.ms/cppwinrt/vsix). 
 
 To get the latest updates to Windows and the development tools, and to help shape their development, join the [Windows Insider Program](https://insider.windows.com).
 
