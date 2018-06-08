@@ -6,7 +6,7 @@
 
 The Photo Editor application is a Universal Windows Platform (UWP) sample that showcases development with the [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) language projection. The sample application allows you to retrieve photos from the **Pictures** library, and then edit the selected image with assorted photo effects. In the sample's source code, you'll see a number of common practices&mdash;such as [data binding](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/binding-property), and [asynchronous actions and operations](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/concurrency)&mdash;performed using the C++/WinRT projection. 
 
-![PhotoEditor sample showing the image collection page, editing page, and editing controls](Screenshots/PhotoEditorBanner.PNG)
+![PhotoEditor sample showing the image collection page, editing page, and editing controls](Screenshots/PhotoEditorBanner.png)
 
 
 ## Features
