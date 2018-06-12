@@ -25,7 +25,8 @@ Photo Editor primarily demonstrates:
 
 This sample requires:
 - [Visual Studio 2017 and the latest version of the Windows 10 SDK (10.0.17134.0)](http://go.microsoft.com/fwlink/?LinkID=280676). You can use the free Visual Studio Community Edition to build and run Windows Universal Platform (UWP) apps. 
-- Download and install the [C++/WinRT Visual Studio Extension](https://aka.ms/cppwinrt/vsix). 
+- Download and install the [C++/WinRT Visual Studio Extension](https://aka.ms/cppwinrt/vsix).
+- You'll need to have a collection of images available in your local **Pictures** folder. If there are no images or photos available at that location, the app will not show anything but the background when you run it.  
 
 To get the latest updates to Windows and the development tools, and to help shape their development, join the [Windows Insider Program](https://insider.windows.com).
 
