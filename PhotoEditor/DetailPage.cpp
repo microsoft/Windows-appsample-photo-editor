@@ -201,7 +201,7 @@ namespace winrt::PhotoEditor::implementation
         for (auto&& item : m_animatablePropertiesList)
         {
             std::wstring str = static_cast<std::wstring>(item);
-            int index = str.find_last_of(L'.', str.size());
+            auto index = str.find_last_of(L'.', str.size());
             hstring prop = static_cast<hstring>(str.substr(index + 1, str.size()));
             UpdateEffectBrush(prop);
         }
