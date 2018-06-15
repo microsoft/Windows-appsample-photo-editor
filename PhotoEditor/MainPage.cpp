@@ -50,10 +50,6 @@ namespace winrt::PhotoEditor::implementation
     {
         InitializeComponent();
         ParaView().Source(ForegroundElement());
-        m_elementImplicitAnimation = m_compositor.CreateImplicitAnimationCollection();
-
-        // Define trigger and animation that should play when the trigger is triggered. 
-        m_elementImplicitAnimation.Insert(L"Offset", CreateOffsetAnimation());
     }
 
     // Loads collection of Photos from users Pictures library.
@@ -62,6 +58,11 @@ namespace winrt::PhotoEditor::implementation
         // Load photos if they haven't previously been loaded.
         if (Photos().Size() == 0)
         {
+			m_elementImplicitAnimation = m_compositor.CreateImplicitAnimationCollection();
+
+			// Define trigger and animation that should play when the trigger is triggered. 
+			m_elementImplicitAnimation.Insert(L"Offset", CreateOffsetAnimation());
+
             co_await GetItemsAsync();
         }
     }
@@ -69,8 +70,7 @@ namespace winrt::PhotoEditor::implementation
     IAsyncAction MainPage::OnContainerContentChanging(ListViewBase sender, ContainerContentChangingEventArgs args)
     {
         auto elementVisual = ElementCompositionPreview::GetElementVisual(args.ItemContainer());
-        auto templateRoot = args.ItemContainer().ContentTemplateRoot().as<Grid>();
-        auto image = templateRoot.FindName(L"ItemImage").as<Image>();
+		auto image = args.ItemContainer().ContentTemplateRoot().as<Image>();
 
         if (args.InRecycleQueue())
         {
@@ -147,6 +147,10 @@ namespace winrt::PhotoEditor::implementation
     // Loads images from the user's Pictures library.
     IAsyncAction MainPage::GetItemsAsync()
     {
+		// Show the loading progress bar.
+		LoadProgressIndicator().Visibility(Windows::UI::Xaml::Visibility::Visible);
+		NoPicsText().Visibility(Windows::UI::Xaml::Visibility::Collapsed);
+
         // File type filter.
         QueryOptions options{};
         options.FolderDepth(FolderDepth::Deep);
@@ -176,6 +180,15 @@ namespace winrt::PhotoEditor::implementation
             }
         }
 
+		if (Photos().Size() == 0)
+		{
+			// No pictures were found in the library, so show message.
+			NoPicsText().Visibility(Windows::UI::Xaml::Visibility::Visible);
+		}
+
+		// Hide the loading progress bar.
+		LoadProgressIndicator().Visibility(Windows::UI::Xaml::Visibility::Collapsed);
+
         if (unsupportedFilesFound)
         {
             ContentDialog unsupportedFilesDialog{};
@@ -183,7 +196,7 @@ namespace winrt::PhotoEditor::implementation
             unsupportedFilesDialog.Content(box_value(L"This sample app only supports images stored locally on the computer. We found files in your library that are stored in OneDrive or another network location. We didn't load those images."));
             unsupportedFilesDialog.CloseButtonText(L"Ok");
 
-            //co_await unsupportedFilesDialog.ShowAsync();
+            co_await unsupportedFilesDialog.ShowAsync();
         }
     }
 

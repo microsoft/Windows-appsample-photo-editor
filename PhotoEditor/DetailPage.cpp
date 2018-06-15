@@ -327,6 +327,7 @@ namespace winrt::PhotoEditor::implementation
                         strong->InitializeEffects();
                         strong->UpdateMainImageBrush();
                         strong->InitializeEffectPreviews();
+						strong->UpdateButtonImageBrush();
                     }
                 });
 
@@ -575,6 +576,10 @@ namespace winrt::PhotoEditor::implementation
         {
             EffectPreviewGrid().SelectedItems().RemoveAt(indexOf);
         }
+
+		ApplyEffects();
+		UpdatePanelState();
+		UpdateButtonImageBrush();
     }
 
     void DetailPage::RemoveAllEffectsButton_Click(IInspectable const&, RoutedEventArgs const&)
@@ -583,6 +588,7 @@ namespace winrt::PhotoEditor::implementation
         ResetEffects();
         ApplyEffects();
         UpdatePanelState();
+		UpdateButtonImageBrush();
     }
 
     IAsyncAction DetailPage::SaveButton_Click(IInspectable const&, RoutedEventArgs const&)

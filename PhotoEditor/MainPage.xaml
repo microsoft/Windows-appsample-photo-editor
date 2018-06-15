@@ -46,17 +46,18 @@ THE SOFTWARE.
 
         <DataTemplate x:Key="ImageGridView_DefaultItemTemplate"
                       x:DataType="local:Photo">
-            <Grid Height="200"
-                  Width="300"
-                  Margin="{StaticResource LargeItemMargin}">
+            <Image x:Name="ItemImage"
+                       Stretch="Uniform"
+                       Opacity="0" 
+                       Height="200"
+                       Width="300"
+                       Margin="{StaticResource LargeItemMargin}">
                 <ToolTipService.ToolTip>
                     <ToolTip Content="{x:Bind ImageTitle, Mode=OneWay}"/>
                 </ToolTipService.ToolTip>
-                <Image x:Name="ItemImage"
-                       Stretch="Uniform"
-                       Opacity="0" />
-            </Grid>
+            </Image>
         </DataTemplate>
+        
 
         <Style x:Key="ImageGridView_DefaultItemContainerStyle"
                TargetType="GridViewItem">
@@ -114,9 +115,15 @@ THE SOFTWARE.
 
         </CommandBar>
 
+        <ProgressBar x:Name="LoadProgressIndicator" Margin="0,-10,0,0"
+                     IsIndeterminate="True" Visibility="Visible"
+                     RelativePanel.AlignLeftWithPanel="True"
+                     RelativePanel.AlignRightWithPanel="True"
+                     RelativePanel.Below="TitleTextBlock"/>
+
         <Grid RelativePanel.AlignLeftWithPanel="True"
               RelativePanel.AlignRightWithPanel="True"
-              RelativePanel.Below="TitleTextBlock">
+              RelativePanel.Below="LoadProgressIndicator">
             <ParallaxView x:Name="ParaView" VerticalShift="50">
 
                 <!--Background element-->
@@ -143,6 +150,11 @@ THE SOFTWARE.
                 </GridView>
 
             </ScrollViewer>
+            
+            <TextBlock x:Name="NoPicsText" Text="Sorry, we couldn't find any images in your Pictures library. Please add some pictures to your library and relaunch the app."
+                       HorizontalAlignment="Center" Margin="0,100,0,0"
+                       Foreground="White" Visibility="Collapsed"/>
+            
         </Grid>
     </RelativePanel>
 </Page>
