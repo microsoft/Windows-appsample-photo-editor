@@ -190,7 +190,7 @@ namespace winrt::PhotoEditor::implementation
 
         private:
 
-			Windows::Foundation::Collections::CollectionChange const m_change{};
+            Windows::Foundation::Collections::CollectionChange const m_change{};
             uint32_t const m_index{};
         };
 

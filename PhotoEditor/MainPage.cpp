@@ -58,10 +58,10 @@ namespace winrt::PhotoEditor::implementation
         // Load photos if they haven't previously been loaded.
         if (Photos().Size() == 0)
         {
-			m_elementImplicitAnimation = m_compositor.CreateImplicitAnimationCollection();
+            m_elementImplicitAnimation = m_compositor.CreateImplicitAnimationCollection();
 
-			// Define trigger and animation that should play when the trigger is triggered. 
-			m_elementImplicitAnimation.Insert(L"Offset", CreateOffsetAnimation());
+            // Define trigger and animation that should play when the trigger is triggered. 
+            m_elementImplicitAnimation.Insert(L"Offset", CreateOffsetAnimation());
 
             co_await GetItemsAsync();
         }
@@ -70,7 +70,7 @@ namespace winrt::PhotoEditor::implementation
     IAsyncAction MainPage::OnContainerContentChanging(ListViewBase sender, ContainerContentChangingEventArgs args)
     {
         auto elementVisual = ElementCompositionPreview::GetElementVisual(args.ItemContainer());
-		auto image = args.ItemContainer().ContentTemplateRoot().as<Image>();
+        auto image = args.ItemContainer().ContentTemplateRoot().as<Image>();
 
         if (args.InRecycleQueue())
         {
@@ -147,9 +147,9 @@ namespace winrt::PhotoEditor::implementation
     // Loads images from the user's Pictures library.
     IAsyncAction MainPage::GetItemsAsync()
     {
-		// Show the loading progress bar.
-		LoadProgressIndicator().Visibility(Windows::UI::Xaml::Visibility::Visible);
-		NoPicsText().Visibility(Windows::UI::Xaml::Visibility::Collapsed);
+        // Show the loading progress bar.
+        LoadProgressIndicator().Visibility(Windows::UI::Xaml::Visibility::Visible);
+        NoPicsText().Visibility(Windows::UI::Xaml::Visibility::Collapsed);
 
         // File type filter.
         QueryOptions options{};
@@ -180,14 +180,14 @@ namespace winrt::PhotoEditor::implementation
             }
         }
 
-		if (Photos().Size() == 0)
-		{
-			// No pictures were found in the library, so show message.
-			NoPicsText().Visibility(Windows::UI::Xaml::Visibility::Visible);
-		}
+        if (Photos().Size() == 0)
+        {
+            // No pictures were found in the library, so show message.
+            NoPicsText().Visibility(Windows::UI::Xaml::Visibility::Visible);
+        }
 
-		// Hide the loading progress bar.
-		LoadProgressIndicator().Visibility(Windows::UI::Xaml::Visibility::Collapsed);
+        // Hide the loading progress bar.
+        LoadProgressIndicator().Visibility(Windows::UI::Xaml::Visibility::Collapsed);
 
         if (unsupportedFilesFound)
         {

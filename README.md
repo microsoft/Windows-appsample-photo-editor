@@ -12,7 +12,7 @@ The Photo Editor application is a Universal Windows Platform (UWP) sample that s
 ## Features
 
 Photo Editor primarily demonstrates:
-	
+    
 - Use of Standard C++17 syntax and libraries with Windows Runtime (WinRT) APIs.
 - Use of coroutines, including the use of co_await, co_return, [**IAsyncAction**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction), and [**IAsyncOperation&lt;TResult&gt;**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncoperation_tresult_).
 - Creation and use of custom Windows Runtime class (runtime class) projected types and implementation types. For more info about these terms, see [Consume APIs with C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/consume-apis) and [Author APIs with C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-apis).

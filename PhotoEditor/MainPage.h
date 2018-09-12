@@ -48,8 +48,8 @@ namespace winrt::PhotoEditor::implementation
         event_token PropertyChanged(Windows::UI::Xaml::Data::PropertyChangedEventHandler const&);
         void PropertyChanged(event_token const&);
 
-		// Event handler.
-		void ImageGridView_ItemClick(Windows::Foundation::IInspectable const, Windows::UI::Xaml::Controls::ItemClickEventArgs const);
+        // Event handler.
+        void ImageGridView_ItemClick(Windows::Foundation::IInspectable const, Windows::UI::Xaml::Controls::ItemClickEventArgs const);
 
     private:
         // Functions for image loading and animation.

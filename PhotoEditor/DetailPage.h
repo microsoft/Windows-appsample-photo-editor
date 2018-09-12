@@ -92,19 +92,19 @@ namespace winrt::PhotoEditor::implementation
         // Prepares animation for navigation back to MainPage view.
         void OnNavigatingFrom(Windows::UI::Xaml::Navigation::NavigatingCancelEventArgs const&);
 
-		// Event handlers
-		void BackButton_ItemClick(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
-		void ZoomSlider_ValueChanged(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::Controls::Primitives::RangeBaseValueChangedEventArgs const&);
-		void MainImageScroller_ViewChanged(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::Controls::ScrollViewerViewChangedEventArgs const&);
-		void Effects_SelectionChanged(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::Controls::SelectionChangedEventArgs const&);
-		void EditButton_Check(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
-		void EditButton_Uncheck(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
-		void TextBlock_Tapped(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::Input::TappedRoutedEventArgs const&);
-		void RemoveAllEffectsButton_Click(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
-		Windows::Foundation::IAsyncAction SaveButton_Click(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
-		void SelectEffectsButton_Click(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
-		void ApplyEffectsButton_Click(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
-		void CancelEffectsButton_Click(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
+        // Event handlers
+        void BackButton_ItemClick(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
+        void ZoomSlider_ValueChanged(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::Controls::Primitives::RangeBaseValueChangedEventArgs const&);
+        void MainImageScroller_ViewChanged(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::Controls::ScrollViewerViewChangedEventArgs const&);
+        void Effects_SelectionChanged(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::Controls::SelectionChangedEventArgs const&);
+        void EditButton_Check(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
+        void EditButton_Uncheck(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
+        void TextBlock_Tapped(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::Input::TappedRoutedEventArgs const&);
+        void RemoveAllEffectsButton_Click(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
+        Windows::Foundation::IAsyncAction SaveButton_Click(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
+        void SelectEffectsButton_Click(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
+        void ApplyEffectsButton_Click(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
+        void CancelEffectsButton_Click(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
 
     private:
         // Initializes all image effects.
