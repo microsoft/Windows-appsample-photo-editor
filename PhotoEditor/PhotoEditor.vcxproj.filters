@@ -32,9 +32,6 @@
     <ClInclude Include="MainPage.h" />
     <ClInclude Include="DetailPage.h" />
     <ClInclude Include="Photo.h" />
-    <ClInclude Include="ObservableVector.h">
-      <Filter>Utilities</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Wide310x150Logo.scale-200.png">
@@ -66,17 +63,14 @@
     <AppxManifest Include="Package.appxmanifest" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="..\CONTRIBUTING.md" />
     <None Include="..\LICENSE.md" />
     <None Include="..\README.md" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Assets">
       <UniqueIdentifier>{e48dc53e-40b1-40cb-970a-f89935452892}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Utilities">
-      <UniqueIdentifier>{a59eccd5-a857-4a6c-bfe4-293557b5dc19}</UniqueIdentifier>
     </Filter>
     <Filter Include="Models">
       <UniqueIdentifier>{d2d82ac2-f140-4cc1-81a6-0c9d62482085}</UniqueIdentifier>
