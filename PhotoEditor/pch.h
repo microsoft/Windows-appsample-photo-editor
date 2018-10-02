@@ -28,6 +28,13 @@
 // we have a collision with min and max macros being defined elsewhere.
 #define NOMINMAX
 
+// This is required otherwise VSDESIGNER will have linker errors.
+#define _VSDESIGNER_DONT_LOAD_AS_DLL
+
+// These are required because XAML compiler assumes these are included.
+#include <Unknwn.h>
+#include <Hstring.h>
+
 #include <winrt/Windows.ApplicationModel.h>
 #include <winrt/Windows.ApplicationModel.Activation.h>
 #include <winrt/Windows.Foundation.h>

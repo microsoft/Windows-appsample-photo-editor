@@ -24,7 +24,6 @@
 
 #include "pch.h"
 #include "MainPage.h"
-#include "ObservableVector.h"
 #include "Photo.h"
 
 using namespace winrt;
@@ -45,7 +44,8 @@ using namespace Windows::UI::Xaml::Media::Imaging;
 namespace winrt::PhotoEditor::implementation
 {
     // Page constructor.
-    MainPage::MainPage() : m_photos(winrt::make<observable_vector<IInspectable>>()),
+    MainPage::MainPage() : 
+        m_photos(winrt::single_threaded_observable_vector<IInspectable>()),
         m_compositor(Window::Current().Compositor())
     {
         InitializeComponent();
