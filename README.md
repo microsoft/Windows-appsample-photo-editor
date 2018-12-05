@@ -1,7 +1,3 @@
-<!---
-  category: ControlsLayoutAndText FilesFoldersAndLibraries
--->
-
 ---
 topic: sample
 languages:
