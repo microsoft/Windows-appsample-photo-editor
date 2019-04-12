@@ -19,7 +19,6 @@ The Photo Editor application is a Universal Windows Platform (UWP) sample that s
 
 ![PhotoEditor sample showing the image collection page, editing page, and editing controls](Screenshots/PhotoEditorBanner.png)
 
-
 ## Features
 
 Photo Editor primarily demonstrates:
@@ -32,14 +31,19 @@ Photo Editor primarily demonstrates:
 - XAML data binding, including the [{x:Bind} markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension).
 - XAML styling and UI customization, including [connected animations](https://docs.microsoft.com/windows/uwp/design/motion/connected-animation).
 
-## Prerequisites
+## Universal Windows Platform development
 
-This sample requires:
-- [Visual Studio 2017 and the latest version of the Windows 10 SDK (10.0.17134.0)](http://go.microsoft.com/fwlink/?LinkID=280676). You can use the free Visual Studio Community Edition to build and run Windows Universal Platform (UWP) apps. 
-- Download and install the [C++/WinRT Visual Studio Extension](https://aka.ms/cppwinrt/vsix).
-- You'll need to have a collection of images available in your local **Pictures** folder. If there are no images or photos available at that location, the app will not show anything but the background when you run it.  
+### Prerequisites
 
-To get the latest updates to Windows and the development tools, and to help shape their development, join the [Windows Insider Program](https://insider.windows.com).
+- Windows 10. Minimum: Windows 10, version 1809 (10.0; Build 17763), also known as the Windows 10 October 2018 Update.
+- [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk). Minimum: Windows SDK version 10.0.17763.0 (Windows 10, version 1809).
+- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) (or Visual Studio 2017). You can use the free Visual Studio Community Edition to build and run Windows Universal Platform (UWP) apps.
+- You'll need to have a collection of images available in your local **Pictures** folder. If there are no images or photos available at that location, the app will not show anything but the background when you run it.
+
+You can optionally install the [C++/WinRT Visual Studio Extension (VSIX)](https://aka.ms/cppwinrt/vsix). When you open the project, it will install the [Microsoft.Windows.CppWinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/).
+
+To get the latest updates to Windows and the development tools, and to help shape their development, join 
+the [Windows Insider Program](https://insider.windows.com).
 
 ## Running the sample
 
@@ -85,3 +89,11 @@ Tapping a photo from the MainPage thumbnail view will take you to the photo edit
 ## External libraries used in this sample
 
 * [Win2D](https://github.com/Microsoft/Win2D)
+
+## Changing the project's target platform version
+
+If you build the project on a given target platform version (`TargetPlatformVersion` in the project file), and then you retarget and rebuild, you may see this error message in Visual Studio: "error MIDL2003: [msg]redefinition [context]: <SYMBOL>". If you do, then here are some options to resolve the issue.
+
+- Sometimes, the resolution is as simple as deleting the file `\Windows-appsample-photo-editor\PhotoEditor\<CONFIGURATION>\XamlMetaDataProvider.idl`, and rebuilding.
+- If that doesn't clear the issue, then you can try deleting all temporary/generated folders and files, and rebuilding.
+- If you haven't made changes, then you can alternatively re-clone the repo, re-target, and build.
