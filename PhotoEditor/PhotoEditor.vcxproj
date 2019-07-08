@@ -3,7 +3,6 @@
   <Import Project="..\packages\Microsoft.Windows.CppWinRT.2.0.190408.1\build\native\Microsoft.Windows.CppWinRT.props" Condition="Exists('..\packages\Microsoft.Windows.CppWinRT.2.0.190408.1\build\native\Microsoft.Windows.CppWinRT.props')" />
   <PropertyGroup Label="Globals">
     <CppWinRTEnabled>true</CppWinRTEnabled>
-    <RequiredBundles>$(RequiredBundles);Microsoft.Windows.CppWinRT</RequiredBundles>
     <MinimalCoreWin>true</MinimalCoreWin>
     <ProjectGuid>{a7508b85-cf3d-4d77-8442-71255c16f18c}</ProjectGuid>
     <ProjectName>PhotoEditor</ProjectName>
