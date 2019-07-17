@@ -8,6 +8,7 @@ products:
 - windows-uwp
 statusNotificationTargets:
 - codefirst@microsoft.com
+description: "The Photo Editor application is a Universal Windows Platform (UWP) sample that showcases development with the [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) language projection."
 ---
 
 <!---
