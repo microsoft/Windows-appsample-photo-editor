@@ -8,7 +8,6 @@ products:
 - windows-uwp
 statusNotificationTargets:
 - codefirst@microsoft.com
-description: "The Photo Editor application is a Universal Windows Platform (UWP) sample that showcases development with C++/WinRT."
 ---
 
 <!---
@@ -17,9 +16,9 @@ description: "The Photo Editor application is a Universal Windows Platform (UWP)
 
 # Photo Editor C++/WinRT sample application
 
-> Note - This sample is targeted and tested for Windows 10, version 1903 (10.0; Build 18362), and Visual Studio 2019. If you prefer, you can use project properties to retarget the project(s) to Windows 10, version 1809 (10.0; Build 17763), and/or open the sample with Visual Studio 2017.
-
 The Photo Editor application is a Universal Windows Platform (UWP) sample that showcases development with the [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) language projection. The sample application allows you to retrieve photos from the **Pictures** library, and then edit the selected image with assorted photo effects. In the sample's source code, you'll see a number of common practices&mdash;such as [data binding](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/binding-property), and [asynchronous actions and operations](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/concurrency)&mdash;performed using the C++/WinRT projection. 
+
+> Note - This sample is targeted and tested for Windows 10, version 1903 (10.0; Build 18362), and Visual Studio 2019. If you prefer, you can use project properties to retarget the project(s) to Windows 10, version 1809 (10.0; Build 17763), and/or open the sample with Visual Studio 2017.
 
 ![PhotoEditor sample showing the image collection page, editing page, and editing controls](Screenshots/PhotoEditorBanner.png)
 
