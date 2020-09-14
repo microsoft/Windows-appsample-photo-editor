@@ -326,7 +326,7 @@ namespace winrt::PhotoEditor::implementation
 
                         strong->InitializeEffects();
                         strong->UpdateMainImageBrush();
-                        strong->InitializeEffectPreviews();
+                        //strong->InitializeEffectPreviews();
                         strong->UpdateButtonImageBrush();
                     }
                 });

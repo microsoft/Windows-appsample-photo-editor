@@ -144,7 +144,7 @@ THE SOFTWARE.
                   RelativePanel.Below="TitleTextBlock"
                   Loaded="{x:Bind StartConnectedAnimationForBackNavigation}"
                   ItemsPanel="{StaticResource ImageGridView_ItemsPanelTemplate}"
-                  ItemTemplate="{StaticResource ImageGridView_DefaultItemTemplate}"
+                  ItemTemplate="{StaticResource ImageGridView_MobileItemTemplate}"
 
                   ContainerContentChanging="OnContainerContentChanging">
                 </GridView>
