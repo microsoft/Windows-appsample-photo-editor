@@ -98,7 +98,7 @@ namespace winrt::PhotoEditor::implementation
             image.Opacity(100);
 
             auto item = unbox_value<PhotoEditor::Photo>(args.Item());
-            Photo* impleType = from_abi<Photo>(item);
+            Photo* impleType = get_self<Photo>(item);
 
             try
             {

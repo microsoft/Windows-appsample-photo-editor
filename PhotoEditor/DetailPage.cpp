@@ -298,7 +298,7 @@ namespace winrt::PhotoEditor::implementation
 
         if (auto item = Item())
         {
-            Photo* impleType = from_abi<Photo>(item);
+            Photo* impleType = get_self<Photo>(item);
             m_imageSource = co_await impleType->GetImageSourceAsync();
 
             // Because DetailPage can be destroyed during the life of the event handler, 
@@ -412,7 +412,7 @@ namespace winrt::PhotoEditor::implementation
     // Creates a specified effect thumbnail for the effect preview UI.
     IAsyncAction DetailPage::InitializeEffectPreview(IInspectable compEffect, Image image)
     {
-        Photo* implType = from_abi<Photo>(Item());
+        Photo* implType = get_self<Photo>(Item());
         image.Source(co_await implType->GetImageThumbnailAsync());
         image.InvalidateArrange();
 
