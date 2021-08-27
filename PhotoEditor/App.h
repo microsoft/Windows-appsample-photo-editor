@@ -30,9 +30,9 @@ namespace winrt::PhotoEditor::implementation
     struct App : public AppT<App>
     {
         App();
+        Windows::UI::Xaml::Controls::Frame CreateRootFrame();
 
         void OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEventArgs const&);
-        void OnSuspending(IInspectable const&, Windows::ApplicationModel::SuspendingEventArgs const&);
         void OnNavigationFailed(IInspectable const&, Windows::UI::Xaml::Navigation::NavigationFailedEventArgs const&);
     };
 }

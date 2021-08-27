@@ -44,7 +44,6 @@ using namespace PhotoEditor::implementation;
 App::App()
 {
     InitializeComponent();
-    Suspending({ this, &App::OnSuspending });
 
 #if defined _DEBUG && !defined DISABLE_XAML_GENERATED_BREAK_ON_UNHANDLED_EXCEPTION
     UnhandledException([this](IInspectable const&, UnhandledExceptionEventArgs const& e)
@@ -59,11 +58,22 @@ App::App()
 }
 
 /// <summary>
-/// Invoked when the application is launched normally by the end user.  Other entry points
+/// Invoked when the application is launched normally by the end user. Other entry points
 /// will be used such as when the application is launched to open a specific file.
 /// </summary>
 /// <param name="e">Details about the launch request and process.</param>
 void App::OnLaunched(LaunchActivatedEventArgs const& e)
+{
+    Frame rootFrame = CreateRootFrame();
+    if (!rootFrame.Content())
+    {
+        rootFrame.Navigate(xaml_typename<PhotoEditor::MainPage>());
+    }
+
+    Window::Current().Activate();
+}
+
+Frame App::CreateRootFrame()
 {
     Frame rootFrame{ nullptr };
     auto content = Window::Current().Content();
@@ -72,64 +82,20 @@ void App::OnLaunched(LaunchActivatedEventArgs const& e)
         rootFrame = content.try_as<Frame>();
     }
 
-    // Do not repeat app initialization when the Window already has content,
+    // Don't repeat app initialization when the Window already has content,
     // just ensure that the window is active
     if (rootFrame == nullptr)
     {
-        // Create a Frame to act as the navigation context and associate it with
-        // a SuspensionManager key
+        // Create a Frame to act as the navigation context
         rootFrame = Frame();
 
         rootFrame.NavigationFailed({ this, &App::OnNavigationFailed });
 
-        if (e.PreviousExecutionState() == ApplicationExecutionState::Terminated)
-        {
-            // Restore the saved session state only when appropriate, scheduling the
-            // final launch steps after the restore is complete
-        }
-
-        if (e.PrelaunchActivated() == false)
-        {
-            if (rootFrame.Content() == nullptr)
-            {
-                // When the navigation stack isn't restored navigate to the first page,
-                // configuring the new page by passing required information as a navigation
-                // parameter
-                rootFrame.Navigate(xaml_typename<PhotoEditor::MainPage>(), box_value(e.Arguments()));
-            }
-            // Place the frame in the current Window
-            Window::Current().Content(rootFrame);
-            // Ensure the current window is active
-            Window::Current().Activate();
-        }
+        // Place the frame in the current Window
+        Window::Current().Content(rootFrame);
     }
-    else
-    {
-        if (e.PrelaunchActivated() == false)
-        {
-            if (rootFrame.Content() == nullptr)
-            {
-                // When the navigation stack isn't restored navigate to the first page,
-                // configuring the new page by passing required information as a navigation
-                // parameter
-                rootFrame.Navigate(xaml_typename<PhotoEditor::MainPage>(), box_value(e.Arguments()));
-            }
-            // Ensure the current window is active
-            Window::Current().Activate();
-        }
-    }
-}
 
-/// <summary>
-/// Invoked when application execution is being suspended.  Application state is saved
-/// without knowing whether the application will be terminated or resumed with the contents
-/// of memory still intact.
-/// </summary>
-/// <param name="sender">The source of the suspend request.</param>
-/// <param name="e">Details about the suspend request.</param>
-void App::OnSuspending([[maybe_unused]] IInspectable const& sender, [[maybe_unused]] SuspendingEventArgs const& e)
-{
-    // Save application state and stop any background activity
+    return rootFrame;
 }
 
 /// <summary>
