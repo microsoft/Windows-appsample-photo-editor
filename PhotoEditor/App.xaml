@@ -28,10 +28,6 @@ THE SOFTWARE.
     xmlns:local="using:PhotoEditor">
 
     <Application.Resources>
-        <!--  window width adaptive snap points  -->
-        <x:Double x:Key="MinWindowSnapPoint">0</x:Double>
-        <x:Double x:Key="MediumWindowSnapPoint">641</x:Double>
-        <x:Double x:Key="LargeWindowSnapPoint">1008</x:Double>
     </Application.Resources>
 
 </Application>
