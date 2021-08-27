@@ -135,7 +135,7 @@ void App::OnSuspending([[maybe_unused]] IInspectable const& sender, [[maybe_unus
 /// <summary>
 /// Invoked when Navigation to a certain page fails
 /// </summary>
-/// <param name="sender">The Frame which failed navigation</param>
+/// <param name="sender">The Frame that failed navigation</param>
 /// <param name="e">Details about the navigation failure</param>
 void App::OnNavigationFailed(IInspectable const&, NavigationFailedEventArgs const& e)
 {
