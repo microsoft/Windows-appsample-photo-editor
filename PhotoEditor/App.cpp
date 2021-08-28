@@ -28,9 +28,7 @@
 #include "MainPage.h"
 
 using namespace winrt;
-using namespace Windows::ApplicationModel;
 using namespace Windows::ApplicationModel::Activation;
-using namespace Windows::Foundation;
 using namespace Windows::UI::Xaml;
 using namespace Windows::UI::Xaml::Controls;
 using namespace Windows::UI::Xaml::Navigation;
@@ -62,7 +60,7 @@ App::App()
 /// will be used such as when the application is launched to open a specific file.
 /// </summary>
 /// <param name="e">Details about the launch request and process.</param>
-void App::OnLaunched(LaunchActivatedEventArgs const& e)
+void App::OnLaunched(LaunchActivatedEventArgs const&)
 {
     Frame rootFrame = CreateRootFrame();
     if (!rootFrame.Content())
@@ -84,7 +82,7 @@ Frame App::CreateRootFrame()
 
     // Don't repeat app initialization when the Window already has content,
     // just ensure that the window is active
-    if (rootFrame == nullptr)
+    if (!rootFrame)
     {
         // Create a Frame to act as the navigation context
         rootFrame = Frame();
