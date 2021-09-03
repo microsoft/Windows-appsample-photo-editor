@@ -47,13 +47,13 @@ namespace winrt::PhotoEditor::implementation
         // Resizes image to fit screen.
         void FitToScreen();
 
-        // Resizes image to it's actual size.
+        // Resizes image to its actual size.
         void ShowActualSize();
 
         // Resizes image after tap.
         void UpdateZoomState();
 
-        // Updates image brush based on set effect and it's value.
+        // Updates image brush based on set effect and its value.
         void UpdateEffectBrush(hstring const&);
 
         // Clears effects back to default.
