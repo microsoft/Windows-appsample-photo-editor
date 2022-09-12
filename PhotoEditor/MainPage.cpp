@@ -81,7 +81,7 @@ namespace winrt::PhotoEditor::implementation
 
         if (args.Phase() == 0)
         {
-            //Add implicit animation to each visual.
+            // Add implicit animation to each visual.
             elementVisual.ImplicitAnimations(m_elementImplicitAnimation);
 
             args.RegisterUpdateCallback([&](auto sender, auto args)
@@ -210,16 +210,16 @@ namespace winrt::PhotoEditor::implementation
 
     CompositionAnimationGroup MainPage::CreateOffsetAnimation()
     {
-        //Define Offset Animation for the Animation group.
+        // Define Offset Animation for the Animation group.
         Vector3KeyFrameAnimation offsetAnimation = m_compositor.CreateVector3KeyFrameAnimation();
         offsetAnimation.InsertExpressionKeyFrame(1.0f, L"this.FinalValue");
         TimeSpan span{ std::chrono::milliseconds{400} };
         offsetAnimation.Duration(span);
 
-        //Define Animation Target for this animation to animate using definition. 
+        // Define Animation Target for this animation to animate using definition. 
         offsetAnimation.Target(L"Offset");
 
-        //Add Animations to Animation group. 
+        // Add Animations to Animation group. 
         CompositionAnimationGroup animationGroup = m_compositor.CreateAnimationGroup();
         animationGroup.Add(offsetAnimation);
 
